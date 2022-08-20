@@ -6,17 +6,18 @@ This currently works, however it will convert ANY webp to gif. The next step is 
 A possible next step is to remove the original image and replace it with the new file, however this might be bad practice.
 '''
 
-import os
+#import os
 import glob
 from PIL import Image
 
-path = os.getcwd() + '/*webp'
-print(path)
-files = glob.glob(path)
+#path = os.getcwd() + '/*webp'
+#print(path)
+files = glob.glob('*webp')
 print(files)
 
 for file in files:
   im = Image.open(file)
+  print(file)
   new_name = file.replace('.webp','')
   print(new_name)
   im.save(str(new_name)+'.gif', 'gif', save_all=True, optimize=True, background=0)
