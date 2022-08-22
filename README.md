@@ -5,4 +5,5 @@ will convert all files in a directory with the webp extension to gifs
 
 - check for animation (done)
 - print files to be converted, then check user input to continue or cancel (done)
-- replace webp with gif option
+- replace webp with gif option (done)
+- if user inputs incorrect option rerun
