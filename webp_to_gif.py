@@ -1,23 +1,32 @@
 ''' 
-Get all files in a directory with the webp ext and convert them to gif.
-
-This currently works, however it will convert ANY webp to gif. The next step is to loop through and test to see if the webp is animated or not, if so then convert it.
-
-A possible next step is to remove the original image and replace it with the new file, however this might be bad practice.
+Converts files in the directory with extention webp to gif
 '''
 
-#import os
+import os
 import glob
 from PIL import Image
 
-#path = os.getcwd() + '/*webp'
-#print(path)
+# create list of files
 files = glob.glob('*webp')
-print(files)
-
 for file in files:
-  im = Image.open(file)
   print(file)
-  new_name = file.replace('.webp','')
-  print(new_name)
-  im.save(str(new_name)+'.gif', 'gif', save_all=True, optimize=True, background=0)
+
+# get user input
+user_input = input('Would you like to convert these files? Y/n: ')
+
+# convert animated webp files
+if user_input.lower() == 'y':
+  for file in files:
+    im = Image.open(file)
+    if im.is_animated == True:
+      new_name = file.replace('.webp','.gif')
+      im.save(str(new_name), 'gif', save_all=True, optimize=True, background=0)
+      os.remove(file)
+    else: print(file + ' is not an animation')
+elif user_input.lower() == 'n': 
+  print('OK, bye bye -_-!')
+  #exit()
+else:
+  print('Please enter either Y or N')
+  # roadmap: rerun code
+  
