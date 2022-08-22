@@ -3,6 +3,6 @@ will convert all files in a directory with the webp extension to gifs
 
 ## features roadmap
 
-- check for animation
-- print files to be converted, then check user input to continue or cancel
+- check for animation (done)
+- print files to be converted, then check user input to continue or cancel (done)
 - replace webp with gif option
