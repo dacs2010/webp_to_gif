@@ -21,7 +21,7 @@ if user_input.lower() == 'y':
     if im.is_animated == True:
       new_name = file.replace('.webp','.gif')
       im.save(str(new_name), 'gif', save_all=True, optimize=True, background=0)
-      os.remove(file)
+      #os.remove(file)
     else: print(file + ' is not an animation')
 elif user_input.lower() == 'n': 
   print('OK, bye bye -_-!')
@@ -29,4 +29,3 @@ elif user_input.lower() == 'n':
 else:
   print('Please enter either Y or N')
   # roadmap: rerun code
-  
